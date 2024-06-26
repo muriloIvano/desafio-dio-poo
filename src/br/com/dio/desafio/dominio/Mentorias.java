@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Mentorias extends Conteudos{
     private LocalDate dataDaMentoria;
+    private LocalDate dataAtual = LocalDate.now();
 
     public double calcularXp() {
         return XP_PADRAO;
@@ -15,6 +16,10 @@ public class Mentorias extends Conteudos{
 
     public void setDataDaMentoria(LocalDate dataDaMentoria) {
         this.dataDaMentoria = dataDaMentoria;
+    }
+
+    public LocalDate getDataAtual() {
+        return dataAtual;
     }
 
     public String toString() {

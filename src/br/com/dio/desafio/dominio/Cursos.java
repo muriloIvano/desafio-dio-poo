@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class Cursos extends Conteudos{
     private int cargaHoraria;
 
+
     public double calcularXp() {
         return XP_PADRAO * cargaHoraria;
     }

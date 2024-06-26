@@ -10,6 +10,7 @@ public class Devs {
     private double pontuacao;
     private List<Conteudos> conteudosInscritos = new ArrayList<>();
     private List<Conteudos> conteudosConcluido = new ArrayList<>();
+    private List<BootCamp> listaDeBootcamps = new ArrayList<>();
 
     public List<Conteudos> getConteudosInscritos() {
         return conteudosInscritos;
@@ -31,6 +32,7 @@ public class Devs {
     public void inscreverBootcamp(BootCamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getListaDeDevs().add(this);
+        listaDeBootcamps.add(bootcamp);
     }
     public void progredir(){
         if(!conteudosInscritos.isEmpty()){
@@ -53,6 +55,20 @@ public class Devs {
         }
         pontuacao = soma;
     }
+
+    public void exibirBootcamps(){
+        if(!listaDeBootcamps.isEmpty()) {
+            System.out.println("DEV: " + nome + ", BOOTCAMPs inscritos:");
+            for(BootCamp b : listaDeBootcamps){
+
+                System.out.println(b.getNome() + ", descrição: " + b.getDescricao());
+                System.out.println();
+            }
+        } else {
+                System.out.println("DEV: " + nome + ", não há inscrição em nenhum BOOTCAMP!");
+            }
+    }
+
 
     @Override
     public String toString() {

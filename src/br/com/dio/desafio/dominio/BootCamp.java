@@ -13,11 +13,9 @@ public class BootCamp {
     private List<Devs> listaDeDevs = new ArrayList<>();
     private List<Conteudos> conteudos = new ArrayList<>();
 
-    public BootCamp(String nome, String descricao, Conteudos conteudo) {
+    public BootCamp(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
-
-        this.conteudos.add(conteudo);
     }
 
     public LocalDate getDataInicial() {
@@ -83,9 +81,6 @@ public class BootCamp {
                 "nome='" + nome + '\'' +
                 ", descricao='" + descricao + '\'' +
                 ", dataInicial=" + dataInicial +
-                ", dataFinal=" + dataFinal +
-                ", listaDeDevs=" + listaDeDevs +
-                ", conteudos=" + conteudos +
-                '}';
+                ", dataFinal=" + dataFinal + '}';
     }
 }
